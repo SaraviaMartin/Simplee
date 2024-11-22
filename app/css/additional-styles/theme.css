@@ -6,6 +6,14 @@
 .form-radio:focus {
   @apply ring-0;
 }
+.form-input:focus,
+/* .dark-theme { */
+  /* Colores base para el tema oscuro */
+  /* --bg-primary: #121212;
+  --text-primary: #ffffff;
+  color: var(--text-primary);
+  min-height: 100vh; */
+/* } */
 
 /* Scrollspy links */
 [data-scrollspy-link].scrollspy-active {

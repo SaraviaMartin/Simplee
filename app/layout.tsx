@@ -1,10 +1,16 @@
 import "./css/style.css";
 
-import { Inter } from "next/font/google";
+import { Fredoka, Nunito } from "next/font/google";
 
-const inter = Inter({
+const fredoka = Fredoka({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-fredoka",
+  display: "swap",
+});
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito",
   display: "swap",
 });
 
@@ -21,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} bg-gray-50 font-inter tracking-tight text-gray-900 antialiased`}
+        className={`${fredoka.variable} ${nunito.variable} bg-gray-50 font-nunito tracking-tight text-gray-900 antialiased`}
       >
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
           {children}

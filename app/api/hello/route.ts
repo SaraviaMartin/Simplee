@@ -1,3 +1,11 @@
 export async function GET(request: Request) {
-  return new Response("Hello, Next.js!");
+  // Puedes acceder a parámetros de consulta
+  const { searchParams } = new URL(request.url);
+  const nombre = searchParams.get('nombre') || 'visitante';
+  
+  return new Response(`¡Hola, ${nombre}!`, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
 }
