@@ -1,11 +1,10 @@
-export const metadata = {
-  title: "Sign In - Simple",
-  description: "Page description",
-};
-
+'use client';
+import { useAuth } from '@/app/providers/AuthProvider';
 import Link from "next/link";
 
 export default function SignIn() {
+  const { user, login, logout } = useAuth()
+
   return (
     <>
       <>

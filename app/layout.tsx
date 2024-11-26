@@ -1,6 +1,7 @@
 import "./css/style.css";
 
 import { Fredoka, Nunito } from "next/font/google";
+import { AuthProvider } from './providers/AuthProvider';
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -29,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${fredoka.variable} ${nunito.variable} bg-gray-50 font-nunito tracking-tight text-gray-900 antialiased`}
       >
-        <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
-          {children}
-        </div>
+        <AuthProvider>
+          <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+            {children}
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );
