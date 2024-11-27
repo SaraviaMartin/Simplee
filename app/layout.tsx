@@ -2,6 +2,7 @@ import "./css/style.css";
 
 import { Fredoka, Nunito } from "next/font/google";
 import { AuthProvider } from './providers/AuthProvider';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -26,15 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${fredoka.variable} ${nunito.variable} bg-gray-50 font-nunito tracking-tight text-gray-900 antialiased`}
-      >
-        <AuthProvider>
-          <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
-            {children}
-          </div>
-        </AuthProvider>
+    <html lang="es">
+      <body>
+        <UserProvider>
+          <AuthProvider>
+            <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+              {children}
+            </div>
+          </AuthProvider>
+        </UserProvider>
       </body>
     </html>
   );
